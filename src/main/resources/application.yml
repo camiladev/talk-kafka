@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: kafka-talk-exemplo
+  main:
+    banner-mode: 'OFF'
+  datasource:
+    url: jdbc:postgresql://localhost:5436/talk_db_local
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    check-location: true
+    locations: classpath:db/migration
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
